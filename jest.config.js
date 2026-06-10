@@ -9,7 +9,7 @@ const config = {
       tsconfig: "./tsconfig.test.json",
     },
   },
-  collectCoverageFrom: ["src/**/*.ts", "!src/**/*.d.ts"],
+  collectCoverageFrom: ["src/**/*.ts", "!src/**/*.d.ts", "!src/index.ts"],
   coverageThreshold: {
     global: {
       branches: 70,

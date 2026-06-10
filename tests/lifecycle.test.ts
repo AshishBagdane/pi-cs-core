@@ -55,4 +55,9 @@ describe("buildConfigInjection", () => {
     expect(injection).toMatch(/^<!-- USER CONFIG PREFERENCES -->/);
     expect(injection).toContain("<!-- Student name: Bob -->");
   });
+
+  it("includes explanation depth preference when set", () => {
+    const config: PiCsConfig = { explanations: { default_depth: "advanced" } };
+    expect(buildConfigInjection(config)).toContain("advanced");
+  });
 });
