@@ -26,9 +26,12 @@
     "lint": "eslint src/**/*.ts",
     "format": "prettier --write src/**/*.ts",
     "typecheck": "tsc --project tsconfig.json --noEmit",
-    "check": "pnpm run typecheck && pnpm run lint && pnpm run test"
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run test",
+    "prepublishOnly": "pnpm run build",
+    "release": "release-it"
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^11.0.1",
     "@types/jest": "^29.0.0",
     "@types/node": "^20.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
@@ -36,6 +39,7 @@
     "eslint": "^8.0.0",
     "jest": "^29.0.0",
     "prettier": "^3.0.0",
+    "release-it": "^20.2.0",
     "ts-jest": "^29.0.0",
     "typescript": "^5.0.0"
   },
@@ -44,10 +48,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AshishBagdane/pi-cs.git"
+    "url": "https://github.com/AshishBagdane/pi-cs-core.git"
   },
   "bugs": {
-    "url": "https://github.com/AshishBagdane/pi-cs/issues"
+    "url": "https://github.com/AshishBagdane/pi-cs-core/issues"
   },
-  "homepage": "https://github.com/AshishBagdane/pi-cs#readme"
+  "homepage": "https://github.com/AshishBagdane/pi-cs-core#readme"
 }
