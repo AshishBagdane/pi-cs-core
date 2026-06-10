@@ -1,0 +1,94 @@
+name: Bug Report
+description: Report a bug in pi-cs-core
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the form below.
+        Before submitting, check [existing issues](https://github.com/AshishBagdane/pi-cs-core/issues) to avoid duplicates.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-flight checklist
+      options:
+        - label: I've searched existing issues and this hasn't been reported before
+          required: true
+
+  - type: input
+    id: pi-cs-core-version
+    attributes:
+      label: pi-cs-core version
+      placeholder: "e.g. 0.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js version
+      placeholder: "e.g. 20.11.0  (run: node --version)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Linux
+        - Windows
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Which module is affected?
+      options:
+        - semester (parseSemesterMd, detectSemesterContext, generateGreeting)
+        - folder (detectFolderContext, summarizeFolderContext)
+        - integrity (checkIntegrityRisk)
+        - progress (recordSession, getBurnoutNudge, buildWeeklySummary)
+        - workspace (findWorkspace, getWorkspaceState)
+        - config (loadConfig, deepMerge)
+        - lifecycle (createSessionState, buildConfigInjection)
+        - other
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened?
+      placeholder: Describe what the function returned or the error thrown.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      placeholder: Describe the expected return value or behavior.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      placeholder: |
+        import { checkIntegrityRisk } from "@aethrekh/pi-cs-core";
+        console.log(checkIntegrityRisk("...", "homework"));
+      render: typescript
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Logs, stack traces, or anything else that might help.

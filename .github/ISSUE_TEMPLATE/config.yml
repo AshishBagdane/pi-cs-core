@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: pi-cs issues
+    url: https://github.com/AshishBagdane/pi-cs/issues
+    about: For bugs in the pi-cs package that consumes this library
+  - name: GitHub Discussions
+    url: https://github.com/AshishBagdane/pi-cs-core/discussions
+    about: Questions, ideas, or anything that isn't a bug or a concrete feature request
