@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "pi-cs Configuration",
+  "description": "User configuration for pi-cs packages",
+  "type": "object",
+  "properties": {
+    "student": {
+      "type": "object",
+      "description": "Student profile settings",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Your first name (used for personalized greetings)"
+        },
+        "year_of_study": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
+          "description": "Current year of study (1=freshman, 4=senior, 5-6=graduate)"
+        },
+        "primary_language": {
+          "type": "string",
+          "enum": ["python", "typescript", "javascript", "java", "cpp", "c", "rust", "go", "haskell", "other"],
+          "description": "Your preferred/primary programming language"
+        },
+        "timezone": {
+          "type": "string",
+          "description": "Your timezone (e.g. America/New_York) for deadline awareness"
+        }
+      }
+    },
+    "explanations": {
+      "type": "object",
+      "description": "Settings for the /explain skill",
+      "properties": {
+        "default_depth": {
+          "type": "string",
+          "enum": ["beginner", "intermediate", "advanced"],
+          "default": "intermediate",
+          "description": "Default explanation depth when not specified"
+        },
+        "prefer_visuals": {
+          "type": "boolean",
+          "default": true,
+          "description": "Prefer Mermaid diagrams when explaining structural concepts"
+        },
+        "use_analogies": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include real-world analogies in explanations"
+        }
+      }
+    },
+    "code": {
+      "type": "object",
+      "description": "Code generation preferences",
+      "properties": {
+        "style": {
+          "type": "string",
+          "enum": ["verbose", "balanced", "concise"],
+          "default": "balanced",
+          "description": "How much inline commenting to include in generated code"
+        },
+        "always_include_complexity": {
+          "type": "boolean",
+          "default": true,
+          "description": "Always annotate algorithm time/space complexity"
+        },
+        "always_include_tests": {
+          "type": "boolean",
+          "default": false,
+          "description": "Always suggest test cases alongside solutions"
+        }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "description": "Academic integrity guard settings",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable the academic integrity guard (strongly recommended)"
+        },
+        "strictness": {
+          "type": "string",
+          "enum": ["strict", "balanced", "relaxed"],
+          "default": "balanced",
+          "description": "How aggressively to flag potential integrity issues"
+        }
+      }
+    },
+    "productivity": {
+      "type": "object",
+      "description": "Productivity and wellbeing settings",
+      "properties": {
+        "burnout_nudges": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable rest/break reminders during long sessions"
+        },
+        "session_warning_minutes": {
+          "type": "integer",
+          "default": 180,
+          "minimum": 30,
+          "description": "Show a break reminder after this many minutes in a session"
+        },
+        "weekly_summary": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show a weekly progress summary at session end"
+        }
+      }
+    },
+    "model": {
+      "type": "object",
+      "description": "Model routing preferences",
+      "properties": {
+        "default": {
+          "type": "string",
+          "description": "Default model for general questions"
+        },
+        "code_heavy": {
+          "type": "string",
+          "description": "Model to use for code generation and review tasks"
+        },
+        "quick": {
+          "type": "string",
+          "description": "Lightweight model for fast, simple queries"
+        }
+      }
+    },
+    "workspace": {
+      "type": "object",
+      "description": "Workspace discovery settings",
+      "properties": {
+        "customPaths": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Additional directories to search for SEMESTER.md (absolute paths, or ~ for home)"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "student": {
+    "year_of_study": 2,
+    "primary_language": "python"
+  },
+  "explanations": {
+    "default_depth": "intermediate",
+    "prefer_visuals": true,
+    "use_analogies": true
+  },
+  "code": {
+    "style": "balanced",
+    "always_include_complexity": true,
+    "always_include_tests": false
+  },
+  "integrity": {
+    "enabled": true,
+    "strictness": "balanced"
+  },
+  "productivity": {
+    "burnout_nudges": true,
+    "session_warning_minutes": 180,
+    "weekly_summary": true
+  }
+}
