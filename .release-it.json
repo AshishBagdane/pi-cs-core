@@ -8,7 +8,8 @@
     "requireCleanWorkingDir": true
   },
   "npm": {
-    "publish": false
+    "publish": false,
+    "versionArgs": ["--allow-same-version"]
   },
   "plugins": {
     "@release-it/conventional-changelog": {
